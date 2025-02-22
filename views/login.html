@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="login-container">
+<h1>Welcome Back</h1>
+<p>Please login to access your account.</p>
+<form id="loginForm">
+<label for="userType">userType</label>
+    <select name="userType" id="userType" required>
+        <option value="Student">Student</option>
+        <option value="ClubAdmin">ClubAdmin</option>
+    </select>
+<div class="form-control">
+<label for="username">Username</label>
+<input type="text" id="username" name="username" placeholder="Enter your 
+username" required>
+</div>
+<div class="form-control">
+<label for="password">Password</label>
+<input type="password" id="password" name="password" placeholder="Enter your 
+password" required>
+<span class="password-toggle" id="togglePassword">👁</span>
+</div>
+<div class="loading" id="loadingSpinner"></div>
+<button type="submit" class="login-btn">Login</button>
+<a href="#" class="forgot-link">Forgot Password?</a>
+</form>
+<div class="signup-section">
+Don't have an account?  <a href="/signup">signup</a>
+</div>
+<div class="error-message" id="errorMessage">Invalid username or password. Please try
+again.</div>
+</div>
+<script src="login.js">
+</script>
+</body>
+</html>

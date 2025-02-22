@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Admin Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        input, button { margin: 10px; padding: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Club Admin Dashboard</h2>
+
+    <!-- Post Event -->
+    <h3>Post Event</h3>
+    <input type="text" id="eventTitle" placeholder="Title">
+    <input type="text" id="eventDesc" placeholder="Description">
+    <input type="date" id="eventDate">
+    <button onclick="postEvent()">Post</button>
+
+    <!-- Create Notification -->
+    <h3>Create Notification</h3>
+    <input type="text" id="notifMessage" placeholder="Message">
+    <button onclick="createNotification()">Create</button>
+
+    <!-- Create Requirement -->
+    <h3>Create Requirement</h3>
+    <input type="text" id="requirementText" placeholder="Requirement">
+    <button onclick="createRequirement()">Create</button>
+
+    <!-- Add Member -->
+    <h3>Add Member</h3>
+    <input type="text" id="memberName" placeholder="Member Name">
+    <button onclick="addMember()">Add</button>
+
+    <!-- Remove Member -->
+    <h3>Remove Member</h3>
+    <input type="text" id="removeName" placeholder="Member Name">
+    <button onclick="removeMember()">Remove</button>
+
+    <!-- Promote/Demote Member -->
+    <h3>Promote/Demote Member</h3>
+    <input type="text" id="updateName" placeholder="Member Name">
+    <select id="updateRole">
+        <option value="Member">Member</option>
+        <option value="Moderator">Moderator</option>
+        <option value="Admin">Admin</option>
+    </select>
+    <button onclick="updateMemberRole()">Update</button>
+
+    
+<script src="../JS/post.js"></script> 
+</body>
+</html>

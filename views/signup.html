@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<link rel="stylesheet" href="signup.css">
+</head>
+<body>
+<div class="signup-container">
+<h1>Create Account</h1>
+<p>Sign up to start your journey.</p>
+<form id="signupForm" action="/signup" method="POST">
+    <label for="userType">userType</label>
+    <select name="userType" id="userType" required>
+        <option value="Student">Student</option>
+        <option value="ClubAdmin">ClubAdmin</option>
+       
+    </select>
+    <div class="form-control">
+    <label for="Username">Username</label>
+    <input type="text" id="Username" name="username" placeholder="Enter your
+    username" required>
+    </div>
+    <div class="form-control">
+    <label for="Password">Password</label>
+    <input type="password" id="Password" name="password" placeholder="Enter your
+    password" required>
+    </div>
+    <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+    <script src="signup.js">
+        
+    </script>
+    </body>
+    </html>
