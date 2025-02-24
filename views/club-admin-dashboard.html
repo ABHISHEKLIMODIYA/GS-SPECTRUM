@@ -4,53 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Club Admin Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        input, button { margin: 10px; padding: 10px; }
-    </style>
+    <link rel="stylesheet" href="club-admin-dashboard.css">
 </head>
 <body>
 
-    <h2>Club Admin Dashboard</h2>
+    <!-- Futuristic Navbar -->
+    <div class="navbar">Club Admin Dashboard</div>
 
-    <!-- Post Event -->
-    <h3>Post Event</h3>
-    <input type="text" id="eventTitle" placeholder="Title">
-    <input type="text" id="eventDesc" placeholder="Description">
-    <input type="date" id="eventDate">
-    <button onclick="postEvent()">Post</button>
+    <!-- Main Container -->
+    <div class="container">
+        <h2>Manage Club Activities</h2>
 
-    <!-- Create Notification -->
-    <h3>Create Notification</h3>
-    <input type="text" id="notifMessage" placeholder="Message">
-    <button onclick="createNotification()">Create</button>
+        <!-- Post Event -->
+        <h3>Post Event</h3>
+        <input type="text" id="eventTitle" placeholder="Title">
+        <input type="text" id="eventDesc" placeholder="Description">
+        <input type="date" id="eventDate">
+        <button onclick="postEvent()">Post</button>
 
-    <!-- Create Requirement -->
-    <h3>Create Requirement</h3>
-    <input type="text" id="requirementText" placeholder="Requirement">
-    <button onclick="createRequirement()">Create</button>
+        <!-- Create Notification -->
+        <h3>Create Notification</h3>
+        <input type="text" id="notifMessage" placeholder="Message">
+        <button onclick="createNotification()">Create</button>
 
-    <!-- Add Member -->
-    <h3>Add Member</h3>
-    <input type="text" id="memberName" placeholder="Member Name">
-    <button onclick="addMember()">Add</button>
+        <!-- Create Requirement -->
+        <h3>Create Requirement</h3>
+        <input type="text" id="requirementText" placeholder="Requirement">
+        <button onclick="createRequirement()">Create</button>
 
-    <!-- Remove Member -->
-    <h3>Remove Member</h3>
-    <input type="text" id="removeName" placeholder="Member Name">
-    <button onclick="removeMember()">Remove</button>
+        <!-- Add Member -->
+        <h3>Add Member</h3>
+        <input type="text" id="memberName" placeholder="Member Name">
+        <button onclick="addMember()">Add</button>
 
-    <!-- Promote/Demote Member -->
-    <h3>Promote/Demote Member</h3>
-    <input type="text" id="updateName" placeholder="Member Name">
-    <select id="updateRole">
-        <option value="Member">Member</option>
-        <option value="Moderator">Moderator</option>
-        <option value="Admin">Admin</option>
-    </select>
-    <button onclick="updateMemberRole()">Update</button>
+        <!-- Remove Member -->
+        <h3>Remove Member</h3>
+        <input type="text" id="removeName" placeholder="Member Name">
+        <button onclick="removeMember()">Remove</button>
 
-    
-<script src="../JS/post.js"></script> 
+        <!-- Promote/Demote Member -->
+        <h3>Promote/Demote Member</h3>
+        <input type="text" id="updateName" placeholder="Member Name">
+        <select id="updateRole">
+            <option value="Member">Member</option>
+            <option value="Moderator">Moderator</option>
+            <option value="Admin">Admin</option>
+        </select>
+        <button onclick="updateMemberRole()">Update</button>
+    </div>
+
 </body>
 </html>
