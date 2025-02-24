@@ -5,89 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="student-dashboard.css">
-    <script src="student-dashboard.js">
-    
-
-    </script>
 </head>
 <body>
-
-    <header>
-        <h1>🎓 Student Dashboard</h1>
-        <button id="themeToggle">🌙 Toggle Dark Mode</button>
+    <header class="dashboard-header">
+        <h1>College Clubs</h1>
+        <div class="icon-group">
+            <span class="bell-icon">🔔</span>
+            <span class="logout-icon">🚪</span>
+        </div>
     </header>
 
     <!-- Event Slider -->
-    <section class="slider">
-    <button class="prev" onclick="prevSlide()">&#10094;</button>
-    <div class="slides">
-        <img src="../images/logo.jpg" class="active">
-        <img src="../images/logo.jpg">
-        <img src="../images/logo.jpg">
+    <div class="event-slider">
+        <div class="slides">
+            <div class="event-box">
+                <img src="hackathon.jpg" alt="Hackathon">
+                <h3>Hackathon</h3>
+                <p>March 20, 2025</p>
+                <button class="join-btn">Join</button>
+            </div>
+            <div class="event-box">
+                <img src="musicfest.jpg" alt="Music Fest">
+                <h3>Music Fest</h3>
+                <p>April 5, 2025</p>
+                <button class="join-btn">Join</button>
+            </div>
+            <div class="event-box">
+                <img src="art.jpg" alt="Art Exhibition">
+                <h3>Art Exhibition</h3>
+                <p>May 10, 2025</p>
+                <button class="join-btn">Join</button>
+            </div>
+        </div>
     </div>
-    <button class="next" onclick="nextSlide()">&#10095;</button>
-    </section>
-
-    <!-- Event Countdown -->
-    <section class="countdown">
-        <h2>Next Event: AI Workshop</h2>
-        <p id="countdownTimer">Loading...</p>
-    </section>
 
     <!-- Clubs Section -->
-    <section class="clubs">
-        <h2>Explore Clubs</h2>
-        <div class="club-list">
-            <button onclick="goToClubDashboard('Music Club')">🎵 Music Club</button>
-            <button onclick="goToClubDashboard('Tech Club')">💻 Tech Club</button>
-            <button onclick="goToClubDashboard('Art Club')">🎨 Art Club</button>
+    <div class="clubs-container">
+        <div class="club-card">
+            <img src="tech.png" alt="Tech Club">
+            <h2>Tech Club</h2>
+            <button class="view-btn">View Club</button>
+            <button class="join-btn">Join</button>
         </div>
-    </section>
-
-    <!-- Notifications -->
-    <section class="notifications">
-        <h2>📢 Notifications</h2>
-        <ul id="notificationList">
-            <li>No new notifications</li>
-        </ul>
-    </section>
-
-    <!-- Join Events -->
-    <section class="join-events">
-        <h2>🎟 Join an Event</h2>
-        <div class="event-list">
-            <div class="event">
-                <h3>Hackathon</h3>
-                <button onclick="joinEvent('Hackathon')">Join</button>
-            </div>
-            <div class="event">
-                <h3>Music Fest</h3>
-                <button onclick="joinEvent('Music Fest')">Join</button>
-            </div>
+        <div class="club-card">
+            <img src="music.png" alt="Music Club">
+            <h2>Music Club</h2>
+            <button class="view-btn">View Club</button>
         </div>
-    </section>
+    </div>
 
-    <!-- QR Check-in -->
-    <section class="qr-checkin">
-        <h2>🔍 Event Check-in</h2>
-        <img id="qrCode" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Event123" alt="QR Code">
-    </section>
+    <!-- Notification Slider -->
+    <div class="notification-slider">
+        <div class="notifications">
+            <div class="notification">Club meeting at 5 PM</div>
+            <div class="notification">New event: Coding Bootcamp</div>
+            <div class="notification">Sports Day on June 15</div>
+        </div>
+    </div>
 
-    <!-- Profile Section -->
-    <section class="profile">
-        <img src="../images/logo.jpg" alt="Profile Picture">
-        <h3>John Doe</h3>
-        <p>Member of: Music Club, Tech Club</p>
-        <button onclick="editProfile()">Edit Profile</button>
-    </section>
-
-    <!-- Application Status -->
-    <section class="application-status">
-        <h2>📄 Application Status</h2>
-        <ul id="applicationList">
-            <li>No applications yet</li>
-        </ul>
-    </section>
-
+    <script src="student-dashboard.js"></script>
 </body>
 </html>
