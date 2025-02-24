@@ -1,74 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
-    setupThemeToggle();
-    startSlider();
-    startCountdown("2025-03-10T18:00:00");
-});
+    let slideIndex = 0;
+    let notifIndex = 0;
 
-// EVENT SLIDER - FIXED
-let currentIndex = 0;
-let slides = [];
+    const slides = document.querySelector(".slides");
+    const notifications = document.querySelector(".notifications");
+    const eventBoxes = document.querySelectorAll(".event-box");
+    const notifItems = document.querySelectorAll(".notification");
 
-function startSlider() {
-    slides = document.querySelectorAll(".slides img");
-    
-    if (slides.length === 0) return; // Prevents errors if no images are found
-    
-    slides[currentIndex].classList.add("active");
-    
-    setInterval(() => {
-        nextSlide();
-    }, 3000);
-}
+    const eventWidth = eventBoxes[0].offsetWidth + 20; // Box width + margin
+    const notifWidth = notifItems[0].offsetWidth + 20; // Box width + margin
 
-function nextSlide() {
-    if (slides.length === 0) return; // Prevents errors if no images are found
-
-    slides[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % slides.length;
-    slides[currentIndex].classList.add("active");
-}
-
-function prevSlide() {
-    if (slides.length === 0) return;
-
-    slides[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    slides[currentIndex].classList.add("active");
-}
-
-// DARK MODE TOGGLE - FIXED
-function setupThemeToggle() {
-    const themeToggleBtn = document.getElementById("themeToggle");
-    if (!themeToggleBtn) return; // Prevents errors if button not found
-
-    themeToggleBtn.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-        localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
-    });
-
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-    }
-}
-
-// EVENT COUNTDOWN TIMER - FIXED
-function startCountdown(eventDate) {
-    let countDownDate = new Date(eventDate).getTime();
-    
-    setInterval(() => {
-        let now = new Date().getTime();
-        let distance = countDownDate - now;
-
-        if (distance < 0) {
-            document.getElementById("countdownTimer").innerHTML = "Event Started!";
-            return;
+    function slideEvents() {
+        slideIndex++;
+        if (slideIndex >= eventBoxes.length) {
+            slideIndex = 0;
+            slides.style.transition = "none"; // Remove transition for instant reset
+            slides.style.transform = "translateX(0)";
+            setTimeout(() => {
+                slides.style.transition = "transform 0.5s ease-in-out";
+            }, 50);
+        } else {
+            slides.style.transform = `translateX(-${slideIndex * eventWidth}px)`;
         }
+    }
 
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    function slideNotifications() {
+        notifIndex++;
+        if (notifIndex >= notifItems.length) {
+            notifIndex = 0;
+            notifications.style.transition = "none"; // Remove transition for instant reset
+            notifications.style.transform = "translateX(0)";
+            setTimeout(() => {
+                notifications.style.transition = "transform 0.5s ease-in-out";
+            }, 50);
+        } else {
+            notifications.style.transform = `translateX(-${notifIndex * notifWidth}px)`;
+        }
+    }
 
-        document.getElementById("countdownTimer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
-}
+    setInterval(slideEvents, 3000);
+    setInterval(slideNotifications, 5000);
+});
